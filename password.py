@@ -27,24 +27,24 @@ def choose_password():
     pwd = generate_password()
     dict_for_pwd = {}
     print("password : {}".format(pwd))
-    choice = "0"
+    choice = 0
     i = 0
-    while choice != "1":
-        choice = input(str("Do you want to save? (y/n)\n"))
+    while choice != 1:
+        choice = input("Do you want to save? (y/n)\n")
         if choice == "y":
             dict_for_pwd[i] = pwd
             i += 1
-            choice = input(str("1 for exit\n0 for another password\n"))
-            if choice == "1":
+            choice = int(input("1 : exit\n0 : regenerate password\n"))
+            if choice == 1:
                 break
             pwd = generate_password()
             print("password : {}".format(pwd))
         else:
-            choice = input(str("1 for exit\n0 for another password\n"))
-            if choice == "1":
+            choice = int(input("1 : exit\n0 : regenerate password\n"))
+            if choice == 1:
                 break
             pwd = generate_password()
-            print("password : {}".format(pwd))
+            print("password : {} ".format(pwd))
         
     return dict_for_pwd
 
@@ -82,18 +82,16 @@ def pwd():
     print("==================")
     print("Password Generator")
     print("==================")    
-    choice = input(str("1 : generate random passwords and save them in a file\n0 : choose the password to save\nexit : for close the generator\n"))
+    choice = input("1 : generate random passwords and save them in a file\n0 : choose the password to save\nexit : for close the generator\n")
     if choice == "1":
-        fname = input(str("file name with the extension: "))
-        n = input(str("number of password to generate: "))
-        n = int(n)
+        fname = input("file name with the extension: ")
+        n = int(input("number of password to generate: "))
         save_on_file_random_pwd(fname,n)
     elif choice == "0":
-        fname = input(str("file name with the extension: "))
+        fname = input("file name with the extension: ")
         save_on_file_choosen_pwd(fname)
     elif choice == "exit":
         return choice
         
     return "saved"
-    
     
