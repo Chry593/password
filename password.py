@@ -85,13 +85,13 @@ def pwd():
     choice = input(str("if you want to generate random passwords and save them in a file press 1 or 0 to choose them: "))
     
     if choice == "1":
-        fname = input(str("name file with the extension: "))
+        fname = input(str("file name with the extension: "))
         n = input(str("number of password to generate: "))
         n = int(n)
         save_on_file_random_pwd(fname,n)
     
     if choice == "0":
-        fname = input(str("name file with the extension: "))
+        fname = input(str("file name with the extension: "))
         save_on_file_choosen_pwd(fname)
         
     return "saved"
